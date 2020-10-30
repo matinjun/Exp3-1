@@ -194,24 +194,15 @@ void mouse(int button, int state, int x, int y)
 //////////////////////////////////////////////////////////////////////////
 // 键盘响应函数
 
+// 更新Delta
 void updateDelta(int sign, double step) {
 	Delta += sign * step;
-	if (Delta >= 2 * M_PI) {
-		Delta -= 2 * M_PI;
-	}
-	else if (Delta < 0) {
-		Delta += 2 * M_PI;
-	}
+	
 }
 
+// 更新Theta
 void updateTheta(int sign, double step) {
 	Theta += sign * step;
-	if (Theta >= 2 * M_PI) {
-		Theta -= 2 * M_PI;
-	}
-	else if(Theta < 0){
-		Theta += 2 * M_PI;
-	}
 }
 
 void keyboard(unsigned char key, int x, int y)
@@ -225,6 +216,9 @@ void keyboard(unsigned char key, int x, int y)
 		exit (EXIT_SUCCESS);
 		break;
 	// Todo：键盘控制相机的位置和朝向
+	// w, s --> R距离
+	// e, d --> Delta
+	// r, f --> Theta
 	case 'w':
 		R += 0.1;
 		break;
