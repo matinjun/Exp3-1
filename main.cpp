@@ -10,7 +10,7 @@
 #include "include/Angel.h"
 #include "include/TriMesh.h"
 
-#pragma comment(lib, "glew32.lib")
+//#pragma comment(lib, "glew32.lib")
 
 #include <cstdlib>
 #include <cmath>
